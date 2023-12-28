@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-el8ccbz6=l$6jmu$#ml#^(0o@!+9*7xivn6qg%^$7im=(8az3b
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost','localhost:8080', '54.88.151.16']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost','localhost:8080', '54.88.151.16', 'ems-final-v-betx.vercel.app/']
 
 
 # Application definition
@@ -56,6 +56,9 @@ CORS_ALLOWED_ORIGINS = [
 CORS_ALLOW_CREDENTIALS = True
 
 SECURE_SSL_REDIRECT = True
+# Optionally, set the following to True to enable HTTP Strict Transport Security (HSTS)
+SECURE_HSTS_SECONDS = 31536000  # 1 year
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
