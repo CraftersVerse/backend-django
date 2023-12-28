@@ -50,7 +50,7 @@ INSTALLED_APPS = [
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:8080",
     "http://localhost:8082",
-    "ems-final-v-betx.vercel.app",
+    "http://ems-final-v-betx.vercel.app",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
