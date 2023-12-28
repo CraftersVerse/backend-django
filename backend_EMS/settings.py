@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-el8ccbz6=l$6jmu$#ml#^(0o@!+9*7xivn6qg%^$7im=(8az3b
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost','localhost:8080', '54.88.151.16', 'ems-final-v-betx.vercel.app/']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost','localhost:8080', '54.88.151.16', 'ems-final-v-betx.vercel.app']
 
 
 # Application definition
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'corsheaders',
+    'sslserver',
 
     'channels',
     'application',
@@ -51,14 +52,15 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:8080",
     "http://localhost:8082",
     "https://ems-final-v-betx.vercel.app",
+    "http://ems-final-v-betx.vercel.app",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
 
 SECURE_SSL_REDIRECT = True
-# Optionally, set the following to True to enable HTTP Strict Transport Security (HSTS)
-SECURE_HSTS_SECONDS = 31536000  # 1 year
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -69,6 +71,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'sslserver.middleware.SSLServerMiddleware',
 ]
 
 ROOT_URLCONF = 'backend_EMS.urls'
