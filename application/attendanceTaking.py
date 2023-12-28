@@ -25,7 +25,7 @@ path = os.path.abspath("FYP_EMS/backend-django/best.pt")
 
 #--------------------------------------------
 def attire_detection(img):
-    model=YOLO("C:/Users/Acer/Desktop/temporary/FYP_EMS/backend-django/best.pt")
+    model=YOLO("C:/Users/Acer/Desktop/backend-django/best.pt")
     classNames = ["appropriate", "not_appropriate"]
 
     results=model.predict(img,stream=True)
