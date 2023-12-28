@@ -41,8 +41,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'corsheaders',
-    'sslserver',
-
     'channels',
     'application',
 ]
@@ -71,7 +69,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'sslserver.middleware.SSLServerMiddleware',
 ]
 
 ROOT_URLCONF = 'backend_EMS.urls'
